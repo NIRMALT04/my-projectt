@@ -68,3 +68,15 @@ def login(role: str, user: UserRequest, db: Session = Depends(get_db)):
     if not security.verify_password(user.password, db_user.hashed_password):
         raise HTTPException(status_code=401, detail="Invalid password")
     return {"message": f"{role.capitalize()} login successful!"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy", "message": "Backend is running!"}
+
+if __name__ == "__main__":
+    import uvicorn
+    print("🚀 Starting FastAPI server...")
+    print("📱 Frontend should be running on: http://localhost:3000")
+    print("🔧 Backend API will be available on: http://localhost:8000")
+    print("📚 API documentation: http://localhost:8000/docs")
+    uvicorn.run(app, host="0.0.0.0", port=8000)

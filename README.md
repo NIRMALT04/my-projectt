@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# Full-Stack Authentication System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A complete authentication system with React frontend and FastAPI backend, supporting doctor and patient user roles.
 
-## Available Scripts
+## 🚀 Quick Start
 
-In the project directory, you can run:
+### Option 1: Using Batch Files (Windows)
+1. **Start Backend**: Double-click `start_backend.bat`
+2. **Start Frontend**: Double-click `start_frontend.bat` (in a new terminal)
 
-### `npm start`
+### Option 2: Manual Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Backend Setup
+```bash
+cd backend
+pip install -r requirements.txt
+python main.py
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Frontend Setup
+```bash
+cd frontend
+npm install
+npm start
+```
 
-### `npm test`
+## 🌐 Access Points
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:8000
+- **API Documentation**: http://localhost:8000/docs
+- **Health Check**: http://localhost:8000/health
 
-### `npm run build`
+## 🔧 Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- ✅ Role selection (Doctor/Patient)
+- ✅ User registration
+- ✅ User login
+- ✅ Responsive design
+- ✅ Loading states
+- ✅ Error handling
+- ✅ Success messages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- ✅ FastAPI server
+- ✅ SQLAlchemy database
+- ✅ Password hashing with bcrypt
+- ✅ CORS enabled for frontend
+- ✅ User registration endpoints
+- ✅ User login endpoints
+- ✅ Role-based authentication
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Project Structure
 
-### `npm run eject`
+```
+my-projectt/
+├── backend/
+│   ├── main.py          # FastAPI server
+│   ├── models.py        # Database models
+│   ├── database.py      # Database connection
+│   ├── security.py      # Password hashing
+│   ├── auth_check.py    # Authentication utilities
+│   ├── seed.py          # Database seeding
+│   └── requirements.txt # Python dependencies
+├── frontend/
+│   ├── src/
+│   │   ├── App.js       # Main React component
+│   │   └── ...          # Other React files
+│   ├── package.json     # Node.js dependencies
+│   └── ...              # React app files
+├── start_backend.bat    # Backend startup script
+├── start_frontend.bat   # Frontend startup script
+└── README.md            # This file
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🔐 How to Use
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Select Role**: Choose between Doctor or Patient
+2. **Register**: Create a new account (if you don't have one)
+3. **Login**: Use your credentials to sign in
+4. **Welcome**: Access the authenticated area
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Troubleshooting
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Backend Issues
+- Ensure Python 3.7+ is installed
+- Check if port 8000 is available
+- Verify all dependencies are installed: `pip install -r requirements.txt`
 
-## Learn More
+### Frontend Issues
+- Ensure Node.js 14+ is installed
+- Check if port 3000 is available
+- Clear npm cache: `npm cache clean --force`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Connection Issues
+- Ensure both frontend and backend are running
+- Check browser console for CORS errors
+- Verify API_BASE_URL in App.js matches backend port
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔒 Security Features
 
-### Code Splitting
+- Password hashing with bcrypt
+- CORS protection
+- Input validation
+- Role-based access control
+- Secure password storage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📱 Technologies Used
 
-### Analyzing the Bundle Size
+- **Frontend**: React, Axios, CSS-in-JS
+- **Backend**: FastAPI, SQLAlchemy, SQLite
+- **Authentication**: bcrypt, passlib
+- **Database**: SQLite (can be easily changed to PostgreSQL/MySQL)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🚀 Deployment
 
-### Making a Progressive Web App
+### Backend
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Frontend
+```bash
+cd frontend
+npm run build
+# Serve the build folder with any static server
+```
 
-### Advanced Configuration
+## 📞 Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you encounter any issues:
+1. Check the browser console for errors
+2. Verify both servers are running
+3. Check the terminal output for backend errors
+4. Ensure all dependencies are properly installed
